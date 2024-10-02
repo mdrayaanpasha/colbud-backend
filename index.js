@@ -32,7 +32,13 @@ import AreaReplyModel from "./AreaReply.js";
 app.get("/",async(req,res)=>{
     res.send("hello")
 })
+app.get("/test-101",async(req,res)=>{
+    res.send({message:"workin bruh!"})
+})
 
+app.get("/test",async(req,res)=>{
+    res.send("working")
+})
 app.post("/registerUser",async(req,res)=>{
     const Data = req.body.D
     try {
