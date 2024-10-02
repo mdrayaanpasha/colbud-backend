@@ -16,10 +16,18 @@ app.use(bodyParser.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
-mongoose.connect("mongodb://localhost:27017/TravelBud", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+//db stuff.
+const dburl = "mongodb+srv://riyazpasha12oct:COLBUD1543@cluster0.tlhbv.mongodb.net/colbud?retryWrites=true&w=majority";
+
+const connectionParams = {
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+}
+
+mongoose.connect(dburl,connectionParams)
+.then(()=>console.log("connected to DB"))
+.catch(err=>console.log(err))
+
 
 import RegisterModel from "./registerModel.js";
 import ConReqModel from "./connectReqModel.js";
