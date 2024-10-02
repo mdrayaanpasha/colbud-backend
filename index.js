@@ -37,7 +37,7 @@ app.get("/test-101",async(req,res)=>{
 })
 
 app.get("/test",async(req,res)=>{
-    res.send("working")
+    res.send({yello:"heloo"})
 })
 app.post("/registerUser",async(req,res)=>{
     const Data = req.body.D
